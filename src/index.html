@@ -593,14 +593,12 @@
     if(!state.role){
       wrap.appendChild(buildDemoBanner());
       wrap.appendChild(buildLogin());
-      wrap.appendChild(buildStorageBanner());
       if(state.infoModal) wrap.appendChild(buildInfoModal());
       if(state.toast) wrap.appendChild(el("div",{class:"toast"},[state.toast]));
       return wrap;
     }
     wrap.appendChild(buildDemoBanner());
     wrap.appendChild(buildTopbar());
-    wrap.appendChild(buildStorageBanner());
 
     if(state.role==="committee"){
       wrap.appendChild(buildCommitteeQueue());
@@ -759,12 +757,6 @@
       DEMO_MAX_FIXTURES+" fixture, "+DEMO_MAX_LEAGUES+" leagues, "+DEMO_MAX_OFFICERS+" club officers, "+
       DEMO_MAX_MAINTENANCE+" maintenance slot, and "+DEMO_MAX_ACTIVE_BOOKINGS+" active rink bookings at a time. "+
       "The full version has none of these limits."
-    ]);
-  }
-  function buildStorageBanner(){
-    return el("div",{style:"background:rgba(46,110,78,0.10);border:1.5px solid var(--green-line);border-radius:10px;"+
-      "padding:10px 14px;font-size:12.5px;color:var(--green-deep);font-weight:600;margin:14px 0;line-height:1.5;"},[
-      "This runs on this device only — nothing is shared with other people, and it clears if you close or reload the page. Use Export data (Admin \u2192 Settings) to save a backup file, and Import data to bring it back next time."
     ]);
   }
 
